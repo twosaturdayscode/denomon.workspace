@@ -1,0 +1,24 @@
+{
+  "name": "@denomon/kit-react-lean",
+  "exports": {
+    "./dev": "./dev.ts"
+  },
+  "version": "0.0.1",
+  "imports": {
+    "esbuild": "npm:esbuild",
+    "esbuild-deno-plugin": "jsr:@duesabati/esbuild-deno-plugin",
+    "postcss": "https://esm.sh/postcss@8.4.42",
+    "tailwindcss": "npm:tailwindcss@3.4.10",
+    "@std/fs": "jsr:@std/fs",
+    "@std/async": "jsr:@std/async",
+    "@std/http/file-server": "jsr:@std/http/file-server",
+    "@std/http/server-sent-event-stream": "jsr:@std/http/server-sent-event-stream"
+  },
+
+  "fmt": {
+    "semiColons": false,
+    "singleQuote": true,
+    "indentWidth": 2,
+    "lineWidth": 80
+  }
+}

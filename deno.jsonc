@@ -1,0 +1,41 @@
+{
+  "description": "Rokku app workspace",
+
+  // See https://docs.deno.com/runtime/fundamentals/workspaces/#configuring-built-in-deno-tools
+  "compilerOptions": {
+    "lib": ["dom", "deno.ns", "dom.iterable"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
+  },
+
+  "imports": {
+    "react": "https://esm.sh/react@18.3.1",
+    "react/": "https://esm.sh/react@18.3.1/",
+    "react-dom": "https://esm.sh/react-dom@18.3.1",
+    "react-dom/": "https://esm.sh/react-dom@18.3.1/"
+  },
+
+  "workspace": [
+    "dist/web/",
+
+    "lib/rome/",
+    "lib/rome-router/",
+    
+    ".denomon/cli/",
+    ".denomon/kits/app.deno.cli/",
+    ".denomon/kits/app.react.lean/"
+  ],
+
+  "lock": false,
+
+  "tasks": {
+    "recompile-cli": "deno compile --allow-all --config=.denomon/cli/deno.json --output=.denomon/bin/denomon .denomon/cli/main.ts"
+  },
+
+  "fmt": {
+    "semiColons": false,
+    "singleQuote": true,
+    "indentWidth": 2,
+    "lineWidth": 80
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "@denomon/kit-cli-lean",
+  "exports": {
+    "./dev": "./dev.ts"
+  },
+  "version": "0.0.1",
+  "imports": {
+    "@std/async": "jsr:@std/async@1.0.4",
+    "@std/path": "jsr:@std/path@1.0.3"
+  }
+}

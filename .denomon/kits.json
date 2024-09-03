@@ -1,0 +1,5 @@
+{
+  "associations": {
+    "web": "@denomon/kit-react-lean"
+  }
+}

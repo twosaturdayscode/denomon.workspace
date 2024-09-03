@@ -1,0 +1,20 @@
+{
+  "name": "@denomon/cli",
+  "exports": "./mod.ts",
+  "description": "Denomon CLI",
+  "version": "0.0.1",
+
+  "imports": {
+    "cliffy": "jsr:@cliffy/command@1.0.0-rc.5",
+    "@std/fs": "jsr:@std/fs@1.0.2",
+    "@std/jsonc": "jsr:@std/jsonc@1.0.1",
+    "which": "jsr:@david/which"
+  },
+
+  "fmt": {
+    "semiColons": false,
+    "singleQuote": true,
+    "indentWidth": 2,
+    "lineWidth": 80
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "name": "rokku.workspace",
+  "dockerFile": "./context/Dockerfile",
+  "updateRemoteUserUID": true,
+  "workspaceFolder": "/home/developer/workspace",
+
+  "initializeCommand": "localWorkspaceFolder=${localWorkspaceFolder} ./.devcontainer/hooks/initialize.sh",
+
+  "postCreateCommand": "${containerWorkspaceFolder}/.devcontainer/hooks/post-create.sh",
+
+  "mounts": [
+    "source=${localWorkspaceFolder}/.denomon/tmp/.zsh_history,target=/home/developer/.zsh_history,type=bind,consistency=cached",
+    "source=${localEnv:HOME}/.ssh,target=/home/developer/.ssh,type=bind",
+    "source=${localWorkspaceFolder},target=/home/developer/workspace,type=bind,consistency=cached"
+  ],
+
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2.11.0": {}
+  },
+
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "deno.enable": true,
+        "deno.lint": true,
+        /** Formatting */
+        "editor.defaultFormatter": "denoland.vscode-deno",
+        "[typescript]": {
+          "editor.defaultFormatter": "denoland.vscode-deno"
+        },
+        "[typescriptreact]": {
+          "editor.defaultFormatter": "denoland.vscode-deno"
+        },
+
+        "files.associations": {
+          "*.css": "tailwindcss"
+        },
+
+        /** Terminal */
+        "terminal.integrated.copyOnSelection": true,
+        "terminal.integrated.defaultProfile.linux": "zsh",
+
+        /** Dictionary **/
+        "cSpell.customDictionaries": {
+          "concepts": {
+            "name": "concepts",
+            "path": "${workspaceFolder}/.cs/editor/vscode/terms/concepts",
+            "description": "Concepts valid in this workspace",
+            "addWords": false
+          },
+          "proper-names": {
+            "name": "proper-names",
+            "path": "${workspaceFolder}/.cs/editor/vscode/terms/proper-names",
+            "description": "Proper names of people, products or artifacts",
+            "addWords": true
+          },
+          "cSpell.language": true
+        }
+      },
+      "extensions": [
+        "GitHub.copilot",
+        "ms-azuretools.vscode-docker",
+        "streetsidesoftware.code-spell-checker",
+        "eamodio.gitlens",
+        "bradlc.vscode-tailwindcss",
+        "mhutchie.git-graph",
+        "denoland.vscode-deno"
+      ]
+    }
+  }
+}
